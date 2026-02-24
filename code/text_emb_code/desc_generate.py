@@ -24,16 +24,16 @@ def create_user_message_rna_unified(rna_name, rna_type):
     return (
         f"Generate a single, cohesive, narrative paragraph for the {rna_type} '{rna_name}'. "
         "The response should include the following 10 key pieces of information:\n"
-        "1) Genomic location and basic structural features (e.g., length, splicing pattern, if applicable);\n"
-        "2) Primary molecular function in gene regulation (e.g., miRNA sponge, transcriptional regulator, protein coding);\n"
-        "3) Key signaling pathways or biological processes it participates in, with at least 3 specific examples;\n"
-        "4) Experimentally validated target genes, proteins, or other RNAs (e.g., mRNA, miRNA), with examples;\n"
-        "5) Association with human diseases, especially cancer or chronic diseases, supported by literature;\n"
-        "6) Role in drug response, including evidence of involvement in drug sensitivity, resistance, or metabolism;\n"
-        "7) Known direct or indirect interactions with therapeutic drugs or small molecules;\n"
-        "8) Expression pattern in normal vs. diseased tissues or in response to drug treatment;\n"
+        "1) Genomic location and structural features;\n"
+        "2) Primary gene regulation function;\n"
+        "3) Key signaling pathways;\n"
+        "4) Experimentally validated target genes, proteins, or other RNAs;\n"
+        "5) Association with human diseases;\n"
+        "6) Cellular phenotypic outcomes upon perturbation;\n"
+        "7) Key structural motifs and subcellular localization;\n"
+        "8) Expression in normal vs. diseased tissues;\n"
         "9) Potential as a diagnostic, prognostic, or predictive biomarker in clinical settings;\n"
-        "10) Feasibility as a therapeutic target or agent (e.g., antisense oligonucleotide, mimic, inhibitor).\n"
+        "10) Feasibility as a therapeutic target or agent.\n"
         "Ensure the summary is precise, evidence-based, suitable for a professional pharmacogenomics or molecular medicine audience, "
         "and integrates all points into a coherent narrative without listing them numerically."
     )
@@ -43,16 +43,16 @@ def create_user_message_drug(drug_name):
     return (
         f"Generate a single, comprehensive paragraph for the drug '{drug_name}'. "
         "The response should include the following 10 key pieces of information:\n"
-        "1) Chemical structure class and representative scaffold (e.g., pyrimidine analog, anthracycline);\n"
-        "2) Primary molecular targets (e.g., proteins, enzymes, receptors), with at least 3 experimentally validated examples;\n"
-        "3) Key signaling pathways modulated by the drug (e.g., PI3K-AKT, p53, Wnt/β-catenin);\n"
-        "4) Known mechanisms of action at the molecular level (e.g., inhibition, activation, DNA intercalation);\n"
-        "5) Major therapeutic indications (diseases or conditions), with specific examples;\n"
-        "6) Evidence of regulation by or interaction with non-coding RNAs (e.g., miRNAs that target its transporter, lncRNAs that sponge regulators of its metabolism);\n"
-        "7) Role in drug resistance or sensitivity mediated by RNA molecules (e.g., miR-21 conferring resistance to gemcitabine);\n"
-        "8) Pharmacokinetic profile relevant to RNA-based biomarker studies (e.g., tissue distribution, half-life);\n"
-        "9) Clinically reported side effects or toxicities that may correlate with RNA expression changes;\n"
-        "10) Potential as a candidate for RNA-guided therapy or RNA-based companion diagnostics.\n"
+        "1) Chemical structure class and representative scaffold;\n"
+        "2) Primary molecular targets;\n"
+        "3) Key signaling pathways modulated by the drug;\n"
+        "4) Known mechanisms of action at the molecular level;\n"
+        "5) Major therapeutic indications;\n"
+        "6) Details of its toxicity, with examples;\n"
+        "7) List of any known target proteins;\n"
+        "8) Indication of this drug, with specific examples of diseases or symptoms;\n"
+        "9) Side effects of this drug, with examples;\n"
+        "10) Clinical usage of this drug, with examples.\n"
         "Ensure the summary is precise, evidence-based, suitable for a professional pharmacogenomics or computational biology audience, "
         "and integrates all points into a coherent narrative without listing them numerically."
     )
@@ -220,6 +220,7 @@ if __name__ == '__main__':
     else:
         print(f"📄 开始处理疾病数据: {disease_input}")
         process_rnas(disease_input, disease_output)
+
 
 
     print("🎉 所有任务已完成！")
